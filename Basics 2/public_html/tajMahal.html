@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <title>Taj Mahal </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style type="text/css">
+            html{
+                background-image:url("tajNight.jpg");
+                background-repeat: no-repeat;
+                background-size: 100%;
+            }
+            
+         * {padding : 0;}
+         body { 
+             font-family: sans-serif;
+             padding: 10px;
+             font-weight:600; 
+             
+         }
+         
+          #title{
+             width:100%;
+             height:70px;
+             margin: auto;
+             border-bottom:1.5px solid #EEE;
+             border-bottom-color:chocolate;
+             text-align: center;
+             float:none;
+             font-size: 60px;
+             font-style: italic;
+             font-weight: bolder;
+             color: beige;
+         }  
+         
+        </style>    
+        <script type="text/javascript">
+            
+            function dayOfWeek()
+            {
+                var date=new Date();
+                
+                var day = new Array();
+                
+                day[0]="Sunday";
+                day[1]="Monday";
+                day[2]="Tuesday";
+                day[3]="Wednesday";
+                day[4]="Thursday";
+                day[5]="Friday";
+                day[6]="Saturday";
+                
+                var todaydate=day[date.getDay()];
+                var time=date.getHours();
+                
+                if(time < 12)
+                {
+                    document.getElementById("greet").innerHTML="Good morning today is "+todaydate+"!";
+                    
+                }
+                else if (time < 16)
+                {
+                    document.getElementById("greet").innerHTML="Good afternoon today is "+todaydate+"!";
+                    
+                }
+                else
+                {
+                    document.getElementById("greet").innerHTML="Have a great day. Today is "+todaydate+"!";
+                }
+            }
+            
+            function goToNewPage()
+                {
+                    var url = document.getElementById('list').value;
+                    if(url !== 'none') {
+                        window.location = url;
+                    }
+                }
+            function goToSlideShow()
+                {
+                    var url = document.getElementById('slide').value;
+                    if(url !== 'none') {
+                        window.location = url;
+                    }
+                }    
+        </script>    
+    </head>
+    <body onload="dayOfWeek()">
+         <div id="title">
+            Taj Mahal  
+        </div>
+        
+        <fieldset>
+        <p> <b id="greet"></b></p>
+        <p id="para"><font color="ivory"> Hello and welcome to Taj Mahal.</font> </p>
+        <p><font color="ivory">Choose from drop down and click on Go to visit places.</font></p>
+        
+        <form id="menu" name="menu" action="java script:leapto(document.menu.dest)" />
+         
+            <select name="list" id="list" accesskey="target">
+                <option value='none' selected>Choose a place</option>
+                <option value="index.html">Welcome - Main Screen</option>
+                <option value="tajMahal.html">Taj Mahal</option>
+                <option value="rannOfKutch.html">Rann Of Kutch</option>
+                <option value="mysore.html">Mysore</option>
+            <select>
+        <input type=button value="Go" onclick="goToNewPage()" />
+        
+        <h2><font color="ivory"> Some information from wikipedia</font></h2>
+        <div><font color="ivory">
+        <p> The Taj Mahal in Persian for Crown of Palaces[4]) is an 
+            ivory-white marble mausoleum on the south bank of the Yamuna river in the Indian city of Agra. 
+            It was commissioned in 1632 by the Mughal emperor, Shah Jahan (reigned 1628–1658), to house the 
+            tomb of his favourite wife, Mumtaz Mahal. The tomb is the centrepiece of a complex nearly 17 hectares 
+            (42 acres) in area,[5] which includes a mosque and a guest house, and is set in formal gardens bounded 
+            on three sides by a crenellated wall. </p>
+            <p>Construction of the mausoleum was essentially completed in 1643 
+            but work continued on other phases of the project for another 10 years. The Taj Mahal complex is believed 
+            to have been completed in its entirety in 1653 at a cost estimated at the time to be around 32 million rupees, 
+            which in 2015 would be approximately 52.8 billion rupees (US$827 million). The construction project employed 
+            some 20,000 artisans under the guidance of a board of architects led by the court architect to the emperor, Ustad Ahmad Lahauri.</p>
+            <p>The Taj Mahal was designated as a UNESCO World Heritage Site in 1983 for being "the jewel of Muslim art in India and 
+            one of the universally admired masterpieces of the world's heritage". Described by Nobel laureate Rabindranath Tagore 
+            as "the tear-drop on the cheek of time", it is regarded by many as the best example of Mughal architecture and a symbol 
+            of India's rich history. The Taj Mahal attracts 7–8 million visitors a year. In 2007, it was declared a winner of the 
+            New7Wonders of the World (2000–2007) initiative.</p></font>
+            </div>
+        <option id= "slide" value="slideShowTaj.html"></option>
+        <input type=button value="Slide show of the Taj" onclick="goToSlideShow()" />
+        </fieldset> 
+    </body>
+</html>

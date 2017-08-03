@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head> 
+        <meta name="description" content="width=device~width, initial scale=1" />  <!-- Responsive Code -->
+        <title> Welcome to Mangalore </title>
+          
+        <style type="text/css">
+         * {padding : 0;}
+         body { font-family: sans-serif;
+                 padding: 10px;
+                 font-weight:600;  }
+         a{text-decoration: none; color: antiquewhite}
+         li {list-style-type: none}
+         
+         
+         #title{
+             width:100%;
+             height:70px;
+             margin: auto;
+             border-bottom:1.5px solid #EEE;
+             border-bottom-color:chocolate;
+             text-align: center;
+             float:none;
+             font-size: 60px;
+             font-style: italic;
+             font-weight: bolder;
+         }
+         
+         div{width: 100%;
+             text-align:center;
+             }
+         
+         div ul{line-height: 50px;}
+         div li{display: inline-block;}  
+         div a{padding:10px;}
+         div a:hover{background: #b2aaaa; 
+                     color:#686464;
+                     border-radius: 5px;}
+         
+         
+         #bodyid{
+         background-image: url("panambur.jpg" ); 
+         background-repeat: no-repeat;
+         background-size: 100%;
+         }
+        
+         
+        </style>
+    </head>
+    <body id="bodyid">
+       
+    
+        <div id="title">
+            Welcome to Mangalore, India !!
+        </div>
+    
+        
+        <div> 
+            <ul>
+                <li><a href="index.html" onclick="myfunction()">Welcome to Mangalore, India</a></li>
+                <li><a href="historyOfMangalore.html" onclick="myfunction()">History Of Mangalore </a></li>
+                <li><a href="education.html" onclick="myfunction()">Education </a></li>
+                <li><a href="healthAndNursing.html">Health and Nursing facilities</a></li>
+                <li><a href="tourism.html">Tourism</a></li>
+                <li><a href="employment.html">Employment</a></li>
+                <li><a href="imageGallery.html">Image Gallery</a></li>
+            </ul>
+        </div>  
+        <div>
+        <button onclick="myfunction()"> Click if you like Mangalore !! </button>
+        </div>
+        <p id="demo"></p>
+        <script type="text/javascript"> 
+            //document.writeln("The Last Modified Date: ",myfunction());
+            function myfunction() {
+                var x= document.lastModified;
+                document.getElementById("demo").innerHTML=x;
+                
+            }
+            
+        </script>
+        <p><strong>Mangalore</strong> is located in the Southern Part of India on the western coast. 
+            It is officially called Mangaluru. It is one of the major ports in India. 
+            Please here in Mangalore speak Tulu, Konkani and Kannada in general. 
+            It is turning out to be a cosmopolitan city due to increasing number of 
+            industries and job creation. Industries and companies that are mentioned 
+            in the employment tab. Please look into other pages in this website for 
+            more information on Mangalore, India. </p>
+        
+    </body>
+</html>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <title>Rann of Kutch</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style type="text/css">
+            html{
+                background-image:url("rannBackground.jpg");
+                background-repeat: no-repeat;
+                background-size: 100%;
+            }
+            
+         * {padding : 0;}
+         body { 
+             font-family: sans-serif;
+             padding: 10px;
+             font-weight:600;  
+         }
+         
+          #title{
+             width:100%;
+             height:70px;
+             margin: auto;
+             text-align: center;
+             float:none;
+             font-size: 60px;
+             font-style: italic;
+             font-weight: bolder;
+             color: beige;
+         }  
+        </style>    
+        <script type="text/javascript">
+            function dayOfWeek()
+            {
+                var date=new Date();
+                
+                var day = new Array();
+                
+                day[0]="Sunday";
+                day[1]="Monday";
+                day[2]="Tuesday";
+                day[3]="Wednesday";
+                day[4]="Thursday";
+                day[5]="Friday";
+                day[6]="Saturday";
+                
+                var todaydate=day[date.getDay()];
+                var time=date.getHours();
+                
+                if(time < 12)
+                {
+                    document.getElementById("greet").innerHTML="Good morning today is "+todaydate+"!";
+                    
+                }
+                else if (time < 16)
+                {
+                    document.getElementById("greet").innerHTML="Good afternoon today is "+todaydate+"!";
+                    
+                }
+                else
+                {
+                    document.getElementById("greet").innerHTML="Have a great day. Today is "+todaydate+"!";
+                }
+            }
+                function goToNewPage()
+                    {
+                        var url = document.getElementById('list').value;
+                        if(url !== 'none') {
+                            window.location = url;
+                        }
+                    }
+                function goToSlideShow()
+                {
+                    var url = document.getElementById('slide').value;
+                    if(url !== 'none') {
+                        window.location = url;
+                    }
+                }
+        </script>    
+    </head>
+    <body onload="dayOfWeek()">
+        <!--add image/ background -->
+         <div id="title">
+            Rann of Kutch 
+        </div>
+        
+        <fieldset>
+        
+        <p> <b id="greet"></b></p>
+        <p id="para"><font color="ivory"> Hello and welcome to Rann of Kutch page. </font></p>
+        <p><font color="ivory">Choose from drop down and click on Go to visit places.</font></p>
+        
+        <form id="menu" name="menu" action="java script:leapto(document.menu.dest)">
+         
+            <select name="list" id="list" accesskey="target">
+                <option value='none' selected>Choose a place</option>
+                <option value="index.html">Welcome - Main Screen</option>
+                <option value="tajMahal.html">Taj Mahal</option>
+                <option value="rannOfKutch.html">Rann Of Kutch</option>
+                <option value="mysore.html">Mysore</option>
+            <select>
+        <input type=button value="Go" onclick="goToNewPage()" />
+        
+        <h2><font color="ivory"> Some information from wikipedia</font></h2>
+        <div><font color="ivory">
+            <p>The Great Rann of Kutch, along with the Little Rann of Kutch and the Banni grasslands 
+                on its southern edge, is situated in the district of Kutch and comprises some 30,000 
+                square kilometres (10,000 sq mi) between the Gulf of Kutch and the mouth of the Indus 
+                River. The marsh can be accessed from the village of Kharaghoda in 
+                Surendranagar District.</p>
+            <p>
+                In India's summer monsoon, the flat desert of salty clay and mudflats, which average 
+                15 meters above sea level, fills with standing water. In very wet years, the wetland 
+                extends from the Gulf of Kutch on the west through to the Gulf of Cambay on the east.
+            </p>
+            
+            <p>
+                The area was a vast shallow of the Arabian Sea until continuing geological uplift 
+                closed off the connection with the sea, creating a vast lake that was still navigable 
+                during the time of Alexander the Great. The Ghaggar River, which presently empties 
+                into the desert of northern Rajasthan, formerly emptied into the Rann of Kutch, but 
+                the lower reaches of the river dried up as its upstream tributaries were captured by 
+                the Indus and Ganges thousands of years ago. Traces of the delta and its distributary 
+                channels on the northern boundary of the Rann of Kutch were documented by the Geological 
+                Survey of India in 2000.</p>
+            <p>
+                
+                The Luni River, which originates in Rajasthan, drains into the desert in the northeast 
+                corner of the Rann. Other rivers feeding into the marsh include the Rupen from the east 
+                and the West Banas River from the northeast.
+            </p>
+            <p>
+                There are sandy islets of thorny scrub, forming a wildlife sanctuary and a 
+                breeding ground for some of the largest flocks of greater and lesser flamingos. 
+                Wildlife, including the Indian wild ass, shelter on islands of higher ground, 
+                called bets, during the flooding. </p>
+        </div></font>
+        <option id= "slide" value="slideShowRann.html"></option>
+        <input type=button value="Slide show of the Rann" onclick="goToSlideShow()" />
+        </fieldset>
+    </body>
+</html>

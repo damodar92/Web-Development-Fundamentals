@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <title>My interactive website </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style type="text/css">
+            html{
+                background-image:url("imageOne.jpg");
+                background-repeat: no-repeat;
+                background-size: 100%;
+            }   
+            
+         * {padding : 0;}
+         body { 
+             font-family: sans-serif;
+             padding: 10px;
+             font-weight:600;  
+         }
+         
+          #title{
+             width:100%;
+             height:70px;
+             margin: auto;
+             border-bottom:1.5px solid #EEE;
+             border-bottom-color:chocolate;
+             text-align: center;
+             float:none;
+             font-size: 60px;
+             font-style: italic;
+             font-weight: bolder; }
+           
+        </style>  
+        
+        <script type="text/javascript">
+            function enterName()
+            {
+                
+                var a=document.getElementById("name").value;
+                if(a!==""){
+                    document.getElementById("para").innerHTML="Welcome "+a+". Please visit my website. ";
+                    document.getElementById("name").disabled=true;
+                    document.getElementById("button").disabled=true;
+                    
+                }
+                else{
+                    alert("Please enter your name into the text box");
+                }
+                    
+            }
+            function dayOfWeek()
+            {
+                var date=new Date();
+                
+                var day = new Array();
+                
+                day[0]="Sunday";
+                day[1]="Monday";
+                day[2]="Tuesday";
+                day[3]="Wednesday";
+                day[4]="Thursday";
+                day[5]="Friday";
+                day[6]="Saturday";
+                
+                var todaydate=day[date.getDay()];
+                var time=date.getHours();
+                
+                if(time < 12)
+                {
+                    document.getElementById("greet").innerHTML="Good morning today is "+todaydate+"!";
+                    
+                }
+                else if (time < 16)
+                {
+                    document.getElementById("greet").innerHTML="Good afternoon today is "+todaydate+"!";
+                    
+                }
+                else
+                {
+                    document.getElementById("greet").innerHTML="Have a great day. Today is "+todaydate+"!";
+                }
+            }
+            
+            function goToNewPage()
+                {
+                    var url = document.getElementById('list').value;
+                    if(url !== 'none') {
+                        window.location = url;
+                    }
+                }
+        </script>    
+    </head>
+    <body onload="dayOfWeek()">
+        <!--add image/ background -->
+         <div id="title">
+            Welcome 
+        </div>
+        <fieldset>
+        <b> Name: </b>
+        </fieldset>
+        <fieldset>
+        <input type="text" style="width:130px" id="name" />
+        <button type="button" id="button" onclick="enterName()">Enter</button>
+        <p> <b id="greet"></b></p>
+        <p id="para"> Hello and welcome to my website. </p>
+        <p> In this website you will see famous places of India. </p>
+        
+        <!--Creating drop down for navigation -->
+        <p>Choose from drop down and click on Go to visit places.</p>
+        
+        <form id="menu" name="menu" action="java script:leapto(document.menu.dest)">
+         
+            <select name="list" id="list" accesskey="target">
+                <option value='none' selected>Choose a place</option>
+                <option value="index.html">Welcome - Main Screen</option>
+                <option value="tajMahal.html">Taj Mahal</option>
+                <option value="rannOfKutch.html">Rann Of Kutch</option>
+                <option value="mysore.html">Mysore</option>
+            <select>
+        <input type=button value="Go" onclick="goToNewPage()" />
+        
+        </fieldset>
+    </body>
+</html>
